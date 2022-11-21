@@ -1,0 +1,45 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title My first PUG Template
+    body  
+        h1 Vista de Productos 
+        if productos[0]
+            table(class="table") 
+                thead 
+                    tr 
+                        th Nombre  
+                        th Precio  
+                        th Foto  
+                each producto in productos
+                    tr 
+                        td= producto.nombre 
+                        td= producto.precio
+                        td 
+                            img(class="foto" src=producto.foto )  
+                                
+                    tr 
+            table 
+        else 
+            p No se encontraron productos
+        a(href="/")
+            button Volver
+style. 
+    .table {
+        background-color: #1f1e1e;
+        color: #ffffff;
+        width: 300px;
+        padding: 10px;
+        text-align: center;
+    }     
+    .foto {
+        object-fit: contain;
+        max-width: 30px;
+    }
+    button {
+        margin-top: 10px;
+    }
+
+ 

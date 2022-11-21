@@ -1,0 +1,41 @@
+<h1>Vista de Productos</h1>
+{{#if productos}}
+   <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Foto</th>
+          </tr>
+        </thead>
+ 
+        {{#each productos}}
+            <tr>
+                <td>{{this.nombre}}</td>
+                <td>{{this.precio}}</td>
+                <td><img src={{this.foto}} class="foto"></td>
+            </tr>
+           
+        {{/each}}
+    </table>
+{{else }}
+    <p>No se encontraron productos</p>
+{{/if}}
+
+<a href="/"><button>Volver</button></a>
+<style>
+    .table {
+    background-color: #1f1e1e;
+    color: #ffffff;
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+}
+.foto {
+    object-fit: contain;
+    max-width: 30px;
+}
+ button {
+        margin-top: 10px;
+    }
+</style>

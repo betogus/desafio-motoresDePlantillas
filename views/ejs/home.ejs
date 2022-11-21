@@ -1,0 +1,47 @@
+ <%- include('./partials/head.ejs')%>
+<h1>Vista de Productos</h1>
+
+<% if (productos[0]) { %>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Foto</th>
+          </tr>
+        </thead>
+        <% productos.forEach(producto => { %>
+             <tr>
+                 <td><%=producto.nombre %></td>
+                 <td><%=producto.precio %></td>
+                 <td><img src= <%=producto.foto %> class="foto"/></td>
+             </tr>
+        <% }) %>
+    </table>
+
+<% } else { %>
+ 
+    <p>No se encontraron productos</p>
+
+<% } %> 
+<a href="/"><button>Volver</button></a>
+
+
+<style>
+    .table {
+    background-color: #1f1e1e;
+    color: #ffffff;
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+}
+.foto {
+    object-fit: contain;
+    max-width: 30px;
+}
+button {
+    margin-top: 10px;
+}
+
+</style>
+ 
